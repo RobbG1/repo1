@@ -51,7 +51,6 @@ public class termFrequency {
 
         ArrayList<Map.Entry<String, Integer>> sortedList = sortTermFrequency(termFrequency);
         printSortedList(sortedList);
-
     }
 
     public static ArrayList<Map.Entry<String, Integer>> sortTermFrequency(Map<String, Integer> termFrequency) {
