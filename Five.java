@@ -5,7 +5,7 @@ public class Five {
     public static List<String> readFile(String pathToFile) throws IOException {
         // Loads the novel file and returns the entire contents of the file as a string list
         BufferedReader articleReader = new BufferedReader(new FileReader(pathToFile));
-        String strLine = articleReader.readLine().trim();
+        String strLine = articleReader.readLine();
         List<String> lineList = new ArrayList<>();
         while(strLine != null) {
             if(!strLine.trim().equals("")) {
@@ -39,8 +39,7 @@ public class Five {
 
     public static List<String> removeStopWords(List<String> wordList) throws IOException {
         // Takes a list of words and returns a copy with all stop words removed
-        String stopWordsPath = "../stop_words.txt";
-        BufferedReader stopWordsReader = new BufferedReader(new FileReader(stopWordsPath));
+        BufferedReader stopWordsReader = new BufferedReader(new FileReader("../stop_words.txt"));
         String stopWordsLine = stopWordsReader.readLine();
         stopWordsReader.close();
         String[] stopWords = null;
@@ -66,18 +65,15 @@ public class Five {
             Integer fre = 1;
             if(wordMap.containsKey(word)) {
                 fre = wordMap.get(word) + 1;
-                wordMap.put(word, fre);
-            } else {
-                wordMap.put(word, fre);
             }
+            wordMap.put(word, fre);
         }
         return wordMap;
     }
 
     public static ArrayList<Map.Entry<String, Integer>> sort(Map<String, Integer> oldMap) {
-        // Takes a map of words and their frequencies
-        //    and returns a list of pairs where the entries are
-        //    sorted by frequency
+        // Takes a map of words and their frequencies and returns a list of pairs
+        // where the entries are sorted by frequency
         ArrayList<Map.Entry<String, Integer>> sortedMapList = new ArrayList<>(oldMap.entrySet());
         Collections.sort(sortedMapList, (o1, o2) -> o2.getValue() - o1.getValue());
         return sortedMapList;
