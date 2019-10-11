@@ -38,7 +38,7 @@ public class Five {
     }
 
     public static List<String> removeStopWords(List<String> wordList) throws IOException {
-        // Loads the stop word list
+        // Takes a list of words and returns a copy with all stop words removed
         String stopWordsPath = "../stop_words.txt";
         BufferedReader stopWordsReader = new BufferedReader(new FileReader(stopWordsPath));
         String stopWordsLine = stopWordsReader.readLine();
@@ -48,7 +48,6 @@ public class Five {
             stopWords = stopWordsLine.split(",");
         }
         ArrayList<String> stopWordList = new ArrayList<String>(Arrays.asList(stopWords));
-        // Removes meaningless words and the stop words
         List<String> returnWordList = new ArrayList<>();
         for(String word : wordList) {
             if(word != null && !word.equals("")
