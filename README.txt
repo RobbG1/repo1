@@ -1,6 +1,6 @@
 Name: Tian Guan
 
-Please use the following command line:
+Commands:
 
 javac Five.java
 java Five ../pride-and-prejudice.txt
