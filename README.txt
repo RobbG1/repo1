@@ -2,13 +2,7 @@ Name: Tian Guan
 
 Commands:
 
-javac TwentyEight.java
-java TwentyEight ../pride-and-prejudice.txt
-
-javac TwentyNine.java
-java TwentyNine ../pride-and-prejudice.txt
-
-javac ThirtyOne.java
-java ThirtyOne ../pride-and-prejudice.txt
+javac TwentyFive.java
+java -classpath ".:sqlite-jdbc-3.27.2.1.jar" TwentyFive ../pride-and-prejudice.txt
 
 
