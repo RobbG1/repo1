@@ -8,5 +8,5 @@ java -classpath ".:sqlite-jdbc-3.27.2.1.jar" TwentyFive ../pride-and-prejudice.t
 javac TwentySix.java
 java TwentySix ../pride-and-prejudice.txt
 
-javac TwentySeve.java
+javac TwentySeven.java
 java TwentySeven ../pride-and-prejudice.txt
